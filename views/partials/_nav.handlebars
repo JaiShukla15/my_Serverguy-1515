@@ -1,0 +1,27 @@
+   <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+      <ul class="navbar nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link">
+                    Home
+                </a>
+            </li>
+           
+        <ul class="navbar nav ml-auto">
+               {{#if user}}   
+            <li class="nav-item dropdown">
+             <a href="/welcome"   class="nav-link ">
+                  Search Github  Codes 
+             </a>
+             <li class="nav-item">
+                 <a href="/users/logout">Logout</a>
+                 </li>
+         </li>
+           {{else}}
+           <li class="nav-item"><a class='nav-link' href="/users/login">Login</a></li>
+            <li class="nav-item "><a href="/users/reg" class='nav-link'>Signup</a></li>
+           {{/if}}
+       
+        </ul>
+       
+     </nav>
+  

@@ -1,0 +1,25 @@
+To test my application all you need to do is just to complete following task :
+Requirement : Machine must have node and npm installed.
+
+1. Navigate to this directory and Open Command Prompt.
+2. then You need to Run  npm install  //to install all dependencies .
+3.  In command prompt type npm start //to start the server 
+4. visit 127.0.0.1:3000 to open an app.
+5. I can Use Mysql database but i will take more time so i used MongoDB Database 
+and It is stored on https://mlab.com/login/
+please login using following credentials :
+ username : Jai151515
+ password : pass1515  
+ then You can find the database named as serverguy
+  
+key skills Used : Node JS , Javascript , Passport JS , Express JS , html , Css , Bootstrap , MongoDB , npm ,
+and all You have mentioned in an email.
+/***************************************************
+**Note** : I did not Used google Authentication for Security reasons but I have used it but In my app You can Check it on Google :
+
+https://www.sharemytales.com/
+
+*************************************/
+Thanks in advance 
+Best regards ,
+Jai Shukla 

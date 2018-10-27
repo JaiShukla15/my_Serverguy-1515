@@ -1,0 +1,26 @@
+<div class="row my-4">    
+<div class="col-md-6 mx-auto">
+<div class="card card-body">
+<h3 class="text-center display-4">Register</h3>
+<form action="/users" method="POST">
+<div class="form-group">
+<label for="username">Username :</label>
+<input type="text" name="name" id="user" placeholder="enter username" value="{{name}}" class="form-control">
+</div>
+<div class="form-group">
+<label for="email">Email :</label>
+<input type="email" name="email" id="email" placeholder="enter email" value="{{email}}" class="form-control">
+</div>
+<div class="form-group">
+<label for="pass">Password :</label>
+<input type="password" name="password" id="password" placeholder="enter password " class="form-control">
+</div>
+<div class="form-group">
+<label for="cpass">Confirm Password</label>
+<input type="password" name="cpass" id="cpass" placeholder="confirm password " class="form-control">
+</div>
+<button class="btn btn-primary">Login</button>
+</div>
+</div>
+</form>
+</div>

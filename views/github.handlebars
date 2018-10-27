@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Codes Here :</title>
+    <script type="text/javascript">
+     var xml;
+      function get_data()
+      {
+          console.log("Run");
+ var language=document.getElementById('code').value;
+    xml=new XMLHttpRequest();
+    xml.open('GET',` https://api.github.com/search/repositories?q=tetris+language:${language}&sort=stars&order=desc/`);
+    xml.onreadystatechange=f2;
+    xml.send(null);
+   }
+   function f2()
+   {
+       if(xml.readyState==4 && xml.status==200)
+       {
+           console.log("Gud");
+         ans=JSON.parse(xml.responseText);
+         //Here i m printing the response on the console for a specific language
+         console.log(ans);
+         document.getElementById('all').innerHTML=JSON.stringify(ans);    
+       }
+       else
+       {
+           document.getElementById('all').innerHTML="Waiting .....";
+       }
+   }
+    </script>
+    </head>
+    <body>
+    <h1 class="text-center display-4">Search Codes Here :</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mr-auto">  
+            <input type="text" name="code" id="code" placeholder="C , Java , Javascript , Node Js , python ....." class="form-control">
+            <input type="button" onClick="get_data()" value="Search Code" class="btn btn-primary my-4">
+             </div>
+            
+          </div>
+    </div>
+    <div id="all">
+
+    </div>
+</body>
+</html>
