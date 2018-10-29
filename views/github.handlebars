@@ -9,7 +9,7 @@
      var xml;
       function get_data()
       {
-          console.log("Run");
+     console.log("Run");
  var language=document.getElementById('code').value;
     xml=new XMLHttpRequest();
     xml.open('GET',` https://api.github.com/search/repositories?q=tetris+language:${language}&sort=stars&order=desc/`);

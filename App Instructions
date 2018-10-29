@@ -7,11 +7,21 @@ Requirement : Machine must have node and npm installed.
 4. visit 127.0.0.1:3000 to open an app.
 5. I can Use Mysql database but i will take more time so i used MongoDB Database 
 and It is stored on https://mlab.com/login/
-please login using following credentials :
- username : Jai151515
- password : pass1515  
- then You can find the database named as serverguy
-  
+*********
+Note : If you want to see the database please mail me at shuklajay012@gmail.com 
+*********
+You can find the database named as serverguy
+/****************************************************
+Heroku Link of the App --------
+
+https://mighty-cliffs-42910.herokuapp.com/
+
+Note : 
+*****************************************************/
+Github link :  
+
+
+****************
 key skills Used : Node JS , Javascript , Passport JS , Express JS , html , Css , Bootstrap , MongoDB , npm ,
 and all You have mentioned in an email.
 /***************************************************
