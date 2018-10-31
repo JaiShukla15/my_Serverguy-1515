@@ -8,7 +8,6 @@ const methodOverride=require('method-override');
 const Search=require('./models/search');
 const passport=require('passport');
 mongoose.Promise=global.Promise;
-//mongoose.connect('mongodb://localhost:27017/Serverguy');
 mongoose.connect('mongodb://Jai151515:pass1515@ds161121.mlab.com:61121/serverguy').then(db=>console.log('Connected')).catch(e=>console.log("something Wrong"));
 const app=express();
 require('./config/passport')(passport);
