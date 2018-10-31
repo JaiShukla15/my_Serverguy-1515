@@ -8,8 +8,13 @@ const methodOverride=require('method-override');
 const Search=require('./models/search');
 const passport=require('passport');
 mongoose.Promise=global.Promise;
+<<<<<<< HEAD
 mongoose.connect('mongodb://localhost:27017/Serverguy');
 //mongoose.connect('mongodb://Jai151515:pass1515@ds161121.mlab.com:61121/serverguy').then(db=>console.log('Connected')).catch(e=>console.log("something Wrong"));
+=======
+//mongoose.connect('mongodb://localhost:27017/Ideas');
+mongoose.connect('mongodb://jai151515:pass1515@ds161121.mlab.com:61121/serverguy').then(db=>console.log('Connected')).catch(e=>console.log("something Wrong"));
+>>>>>>> 0686171b87212861e0f69d5bf7fcd26ac31a0c1d
 const app=express();
 require('./config/passport')(passport);
 app.use(session({
