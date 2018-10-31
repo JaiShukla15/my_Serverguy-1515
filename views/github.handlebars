@@ -10,9 +10,9 @@
       function get_data()
       {
      console.log("Run");
- var language=document.getElementById('code').value;
+    var language=document.getElementById('code').value;
     xml=new XMLHttpRequest();
-    xml.open('GET',` https://api.github.com/search/repositories?q=tetris+language:${language}&sort=stars&order=desc/`);
+    xml.open('GET',`https://api.github.com/search/repositories?q=tetris+language:${language}&sort=stars&order=desc/`);
     xml.onreadystatechange=f2;
     xml.send(null);
    }
@@ -22,30 +22,71 @@
        {
            console.log("Gud");
          ans=JSON.parse(xml.responseText);
-         //Here i m printing the response on the console for a specific language
-         console.log(ans);
-         document.getElementById('all').innerHTML=JSON.stringify(ans);    
+         console.log(ans.items);
+         //Here i m printing the response on the console for a specific language;
+         var names=ans.items[1].name;
+         var cloneUrl=ans.items[1].clone_url;
+         var languageData=ans.items[1].language;
+         //save_data(names);
+         document.getElementById('all').innerHTML=`${names}`;    
+         document.getElementById('data').innerHTML=cloneUrl;  
+         document.getElementById('lang').innerHTML=languageData;
        }
        else
        {
            document.getElementById('all').innerHTML="Waiting .....";
        }
    }
+   /*var xml1;
+   function save_data(names,clone_url,languageData)
+   {
+       console.log("Running");
+    xml1=new XMLHttpRequest();
+    xml1.open('GET',`save_data.js/${names}/${clone_url}/${languageData}`);
+    xml1.onreadystatechange=final;
+    xml1.send(null);
+   }
+   function final()
+   {
+    if(xml1.readyState==4 && xml1.status==200)
+       {
+           console.log("Did it");
+       }    
+   }*/
     </script>
     </head>
     <body>
-    <h1 class="text-center display-4">Search Codes Here :</h1>
+    <h2 class="text-center display-4">Search Codes Here :</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-6 mr-auto">  
             <input type="text" name="code" id="code" placeholder="C , Java , Javascript , Node Js , python ....." class="form-control">
             <input type="button" onClick="get_data()" value="Search Code" class="btn btn-primary my-4">
              </div>
-            
           </div>
     </div>
-    <div id="all">
-
+    <div>
+        <h5 class="text-center">These are the Top Rated Result from the Github You can also open the below url to open the repositry:</h5> 
     </div>
+    <table id="name" class="table table-dark">
+        <tr>
+        <th>
+        Github Username :
+        </th>
+        </tr>
+    <tr id="all">
+    </tr>
+    <th id="url">
+        Github Url :
+      </th>  
+    <tr id="data">
+    </tr>
+    <th>
+     Language
+    </th>
+    <tr id="lang">
+    </tr>
+     </table>
+     <a href="https://www.sharemytales.com/" target="_blank" class="btn btn-danger">Click here to Open My Official Site : </a>
 </body>
 </html>

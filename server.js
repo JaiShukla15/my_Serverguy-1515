@@ -5,10 +5,11 @@ const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 const exphbs=require('express-handlebars');
 const methodOverride=require('method-override');
+const Search=require('./models/search');
 const passport=require('passport');
 mongoose.Promise=global.Promise;
-//mongoose.connect('mongodb://localhost:27017/Ideas');
-mongoose.connect('mongodb://Jai151515:pass1515@ds161121.mlab.com:61121/serverguy').then(db=>console.log('Connected')).catch(e=>console.log("something Wrong"));
+mongoose.connect('mongodb://localhost:27017/Serverguy');
+//mongoose.connect('mongodb://Jai151515:pass1515@ds161121.mlab.com:61121/serverguy').then(db=>console.log('Connected')).catch(e=>console.log("something Wrong"));
 const app=express();
 require('./config/passport')(passport);
 app.use(session({
@@ -41,6 +42,20 @@ res.render('github');
 app.get('/',(req,res)=>{
 res.render('index',{
     title:'Welcome'
+});
+app.get('/saveData/:name/:url/:lang',(req,res)=>{
+const name=req.params.name;
+const url=req.params.url;
+const langua=req.params.lang;
+const SearchD=new Search({
+    gname:name,
+    gurl:url,
+    lused:langua
+});
+SearchD.save().then((sdata)=>{
+console.log("Saved Successfully");
+}).catch(e=>console.log(e));
+
 });
 });
 const port=process.env.PORT || 3000;

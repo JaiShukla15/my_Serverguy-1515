@@ -1,10 +1,15 @@
-const mongoosse=require('mongoose');
+const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
-const SeachSchema=new Schema({
-data:{
+const SearchSchema=new Schema({
+gname:{
+    type:String
+},
+gurl:{
+    type:String
+},
+lused:{
     type:String
 }
-
 });
-const SearchData=mongoose.model('searchData',SeachSchema);
-module.exports=SearchData;
+const Search=mongoose.model('search',SearchSchema);
+module.exports=Search;
