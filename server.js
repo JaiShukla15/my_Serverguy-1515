@@ -43,19 +43,6 @@ res.render('index',{
     title:'Welcome'
 });
 });
-// app.get('/saveData/:name/:url/:lang',(req,res)=>{
-// const name=req.params.name;
-// const url=req.params.url;
-// const langua=req.params.lang;
-// const SearchD=new Search({
-//     gname:name,
-//     gurl:url,
-//     lused:langua
-// });
-// SearchD.save().then((sdata)=>{
-// console.log("Saved Successfully");
-// }).catch(e=>console.log(e));
-// });
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{
 console.log("Server is running at 3000");
